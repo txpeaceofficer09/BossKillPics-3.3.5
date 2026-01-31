@@ -2,7 +2,7 @@ local f = CreateFrame("Frame", nil, UIParent)
 
 local lastBossGUID = nil
 
-local BossID {
+local BossID = {
 	-- Black Temple
 	['22948'] = true, -- Bloodboil
 	['23418'] = true, -- Essence Of Souls
@@ -340,7 +340,7 @@ local BossID {
 	['11517'] = true, -- Oggleflint
 	['11520'] = true, -- Taragaman
 	
-	Razorfen Downs
+	--Razorfen Downs
 	['7358'] = true, -- Amnennarthe Coldbringer
 	['8567'] = true, -- Glutton
 	['7357'] = true, -- Mordresh Fire Eye
@@ -659,6 +659,19 @@ local function OnEvent(self, event, ...)
 
 		if subevent == "PARTY_KILL" and IsBoss(dstGUID) then
 			if not lastBossGUID or lastBossGUID ~= dstGUID then
+				--[[
+				self:SetScript("OnUpdate", function(self, elapsed)
+					self.timer = (self.timer or 0) + elapsed
+
+					if self.timer >= 1.5 then
+						TakeScreenshot()
+						lastBossGUID = dstGUID
+
+						self.timer = nil
+						self:SetScript("OnUpdate", nil)
+					end
+				end)
+				]]
 				TakeScreenshot()
 				lastBossGUID = dstGUID
 			end
