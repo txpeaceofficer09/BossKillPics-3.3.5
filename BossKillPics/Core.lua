@@ -647,6 +647,9 @@ local BossID = {
 	[11348] = true, -- Thekal
 	[11347] = true, -- Thekal
 	[14507] = true, -- Venoxis
+
+	-- Love is in the Air (Seasonal)
+	[36288] = true, -- Alchemist Hummel
 }
 
 local function IsBoss(guid)
