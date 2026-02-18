@@ -670,7 +670,7 @@ local function OnEvent(self, event, ...)
 						TakeScreenshot()
 						lastBossGUID = dstGUID
 
-						print("|cffff8800[BossKillPics]:|r screenshot taken of "..dstName..".")
+						--print("|cffff8800[BossKillPics]:|r screenshot taken of "..dstName..".")
 
 						self.timer = nil
 						self:SetScript("OnUpdate", nil)
