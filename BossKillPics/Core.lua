@@ -650,6 +650,9 @@ local BossID = {
 
 	-- Love is in the Air (Seasonal)
 	[36288] = true, -- Alchemist Hummel
+
+	-- World Boss
+	[61056] = true, -- Icecrown Soulbreaker
 }
 
 local function IsBoss(guid)
